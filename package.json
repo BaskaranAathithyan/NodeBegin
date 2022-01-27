@@ -1,0 +1,22 @@
+{
+  "name": "nodebegin",
+  "version": "1.0.0",
+  "description": "begining",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaskaranAathithyan/NodeBegin.git"
+  },
+  "author": "Aathi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaskaranAathithyan/NodeBegin/issues"
+  },
+  "homepage": "https://github.com/BaskaranAathithyan/NodeBegin#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
