@@ -35,3 +35,20 @@ rl.question('what is Your Nmae?', (ans) =>{
     
 }); */
 
+
+//third party module
+
+const express=require('express');
+const app = express();
+const morgan=require('morgan');
+
+app.use(morgan('dev'));
+
+app.get('/' , (req,res) => {
+    res.json("hellov  ")
+})
+
+//localhost
+app.listen(2000,()=> {
+    console.log('server stated on 2000');
+})
