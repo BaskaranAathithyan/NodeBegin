@@ -41,14 +41,49 @@ rl.question('what is Your Nmae?', (ans) =>{
 const express=require('express');
 const app = express();
 const morgan=require('morgan');
+const mongoose=require('mongoose');
+const uuid=require('uuid');
 
+//middleware
 app.use(morgan('dev'));
 
+const myPerson =[
+    {
+        id:uuid.v4(),
+        name:"aathi",
+        age:23
+    },
+    {
+        id:uuid.v4(),
+        name:"Thasi",
+        age:23
+    },
+    {
+        id:uuid.v4(),
+        name:"Bhai",
+        age:23
+    }
+]
+
+//get
 app.get('/' , (req,res) => {
-    res.json("hellov  ")
+    res.status(200).json(myPerson)
+})
+app.get('/:id' , (req,res) => {
+    res.json(req.params.id);
 })
 
 //localhost
 app.listen(2000,()=> {
     console.log('server stated on 2000');
+});
+
+
+//DB cOnnect
+mongoose.connect('mongodb://localhost:27017/persons', (err) => {
+    if(err ){
+        console.log("db not connected");
+    }else{
+        console.log("db connected success");
+    }
 })
